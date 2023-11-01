@@ -1,6 +1,6 @@
 FROM lukechannings/deno:v1.37.0
 
-EXPOSE 2222
+EXPOSE 7777
 
 WORKDIR /app
 

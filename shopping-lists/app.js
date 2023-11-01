@@ -36,4 +36,4 @@ const handleRequest = async (request) => {
   }
 };
 
-serve(handleRequest, { port: 2222 });
+serve(handleRequest, { port: 7777 });
