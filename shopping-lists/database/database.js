@@ -1,6 +1,5 @@
 import { postgres } from "../deps.js";
 
-let sql;
-sql = postgres();
+const sql = postgres({});
 
 export { sql };
