@@ -5,8 +5,7 @@ const sql = postgres({
   database: Deno.env.get("PGDATABASE"), 
   username: Deno.env.get("PGUSER"), 
   password: Deno.env.get("PGPASSWORD"), 
-  port: 5432,
-  max: 2, 
+  port: Deno.env.get("PGPORT"),
 });
 
 export { sql };
