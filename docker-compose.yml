@@ -7,7 +7,6 @@ services:
     restart: "no"
     volumes:
       - ./shopping-lists/:/app
-      - ./shopping-lists-cache/:/app-cache
 
     ports:
       - 2222:2222
