@@ -6,7 +6,7 @@ services:
     image: shopping-lists
     restart: "no"
     volumes:
-      - ./shopping-lists/:/app.js
+      - ./shopping-lists/:/app
     ports:
       - 2222:2222
     depends_on:
