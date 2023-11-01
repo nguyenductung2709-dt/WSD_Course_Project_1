@@ -1,0 +1,37 @@
+<% layout('./layouts/layout.eta') %>
+
+<h1><%= it.listName.name %></h1>
+
+<h2>Add an item</h2>
+
+<form method="POST" action="/lists/<%= it.list.id %>/items">
+  Name: <input type="text" name="name" />
+  <input type="submit" value="Add an item" />
+</form>
+
+<h2>Active items</h2>
+
+<ul>
+<% const sortedItems = it.currentShoppingList.sort((a, b) => {
+    // Sort uncollected items first, then collected items
+    if (a.collected === b.collected) {
+        return 0; 
+    }
+    return a.collected ? 1 : -1; 
+}) %>
+
+<% sortedItems.forEach((item) => { %>
+  <li>
+    <% if (item.collected === false) { %>
+      <p> <%= item.name %> </p>
+    <% } else { %>
+      <del><%= item.name %></del>
+    <% } %>
+    <form method="POST" action="/lists/<%= it.list.id %>/items/<%= item.id %>/collect" style="display: inline;">
+      <input type="submit" value="Mark collected!" />
+    </form>
+  </li>
+<% }); %>
+</ul>
+
+<a href="/lists">Shopping lists</a>
