@@ -2,7 +2,7 @@ FROM lukechannings/deno:v1.37.0
 
 EXPOSE 2222
 
-WORKDIR /shopping-lists/
+WORKDIR /shopping-lists
 
 COPY /shopping-lists/deps.js .
 
