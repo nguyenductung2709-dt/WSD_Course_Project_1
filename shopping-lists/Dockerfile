@@ -2,9 +2,9 @@ FROM lukechannings/deno:v1.37.0
 
 EXPOSE 2222
 
-WORKDIR /shoppping-lists
+WORKDIR /app
 
-COPY deps.js .
+COPY /shopping-lists/deps.js .
 
 RUN deno cache deps.js
 
