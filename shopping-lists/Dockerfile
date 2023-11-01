@@ -4,7 +4,7 @@ EXPOSE 2222
 
 WORKDIR /shopping-lists
 
-COPY deps.js .
+COPY /shopping-lists/deps.js .
 
 RUN deno cache deps.js
 
