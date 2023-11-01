@@ -7,7 +7,6 @@ services:
     restart: "no"
     volumes:
       - ./shopping-lists/:/app
-
     ports:
       - 2222:2222
     depends_on:
