@@ -14,7 +14,7 @@
 <ul>
 <% it.lists.forEach((list) => { %>
   <a href="/lists/<%= list.id %>"><%= list.name %></a>
-   <form method="GET" action="/lists/<%= list.id %>/deactivate" style="display: inline;">
+   <form method="POST" action="/lists/<%= list.id %>/deactivate" style="display: inline;">
           <input type="submit" value="Deactivate list!" />
         </form>
 <% }); %>

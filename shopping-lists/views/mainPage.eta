@@ -4,9 +4,10 @@
   <h1>Lists</h1>
 </a>
 
-<% if (it.numberOfLists === 0) { %>
+<% if (it.numberOfLists == 0) { %>
   <p>No shopping lists yet.</p>
-<% } else { %>
+<% } 
+else { %>
   <ul>
     <li>Shopping lists: <%= it.numberOfLists %></li>
     <li>Shopping list items: <%= it.numberOfItems %></li>
