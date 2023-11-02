@@ -92,13 +92,6 @@ docker rmi e2e-playwright
 docker compose run --entrypoint=npx e2e-playwright playwright test && docker compose rm -sf
 ```
 
-Note! Once finished, this will also remove any changes to the database of your
-local project.
-
-What the e2e tests effectively do is that they start up a browser within the
-docker container and examine the application programmatically based on the
-tests.
-
 ## Location of online website
 
 https://wsd-course-project-1-4uaq.onrender.com
