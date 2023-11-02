@@ -23,7 +23,7 @@
 <% sortedItems.forEach((item) => { %>
   <li>
     <% if (item.collected === false) { %>
-      <p> <%= item.name %> </p>
+      <span> <%= item.name %> </span>
     <% } else { %>
       <del><%= item.name %></del>
     <% } %>

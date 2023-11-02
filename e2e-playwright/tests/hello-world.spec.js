@@ -33,7 +33,7 @@ test("Can create an individual list page.", async ({ page }) => {
   const itemName = `My item: ${Math.random()}`; 
   await page.locator("input[type=text]").type(itemName);
   await page.locator("input[type=submit][value='Add an item']").click();
-  await expect(page.locator(`p >> text='${itemName}'`)).toHaveText(itemName);
+  await expect(page.locator(`span >> text='${itemName}'`)).toHaveText(itemName);
 });
 
 
