@@ -7,8 +7,18 @@ This is Shared shopping list - the course project I
 ## Contents
 
 The course project I has a simple Deno application that starts on port `7777`.
-The application responds to queries with the message `Hello world!` and logging
-the contents of the database table `shopping_lists ` and `shopping_list_items` to the console.
+
+The main page will respond to queries with a page which contains h1 `Lists`, "Shopping list: ", and "Shopping list items: ". 
+"Shopping list: " is used to display the number of shopping lists
+"Shopping list items: " is used to display the number of shopping list items
+
+"/lists" will respond to queries with a page which contains h1 `Shopping lists`, a form to add new shopping list, and a list of active lists.
+Click on individual list will redirect to path /lists/list.id
+Click on "Main page" will redirect to main page
+
+"/lists/list.id" will respond to queries with a page which contains name of the list , a form to add new item, and a list of items.
+Click on "Mark collected!" will create a line go through an item to indicate that it is collected. 
+Click on "Shopping lists" will redirect to path /lists
 
 Launching the course project I starts the Deno application, a PostgreSQL server,
 and a database migration process (Flyway).
@@ -68,17 +78,7 @@ dependencies. If you need to clear the cache, empty the contents of the folder.
 ## The project.env file
 
 Database and Deno cache configurations are entered in the `project.env` file,
-which Docker uses when starting the Shared shopping list. If you deploy the
-application, you naturally do not wish to use the file in this repository.
-Instead, create a new one that is -- as an example -- only available on the
-server where the application is deployed. Another option is to use secrets --
-we'll discuss these briefly in the course, where this Shared shopping list is used.
-
-## VSCode configurations
-
-The Shared shopping list also comes with a few default VSCode settings. These
-settings can be found in the `settings.json` file in the `.vscode` folder. By
-default, we assume that you have the VSCode Deno plugin.
+which Docker uses when starting the Shared shopping list. 
 
 ## E2E Tests with playwright
 
@@ -87,6 +87,8 @@ The Shared shopping list comes also with 5 tests to check its functions.
 To run E2E tests, launch the project using the following command:
 
 ```
+docker rm $(docker ps -a -q)
+docker rmi e2e-playwright
 docker compose run --entrypoint=npx e2e-playwright playwright test && docker compose rm -sf
 ```
 
@@ -97,5 +99,8 @@ What the e2e tests effectively do is that they start up a browser within the
 docker container and examine the application programmatically based on the
 tests.
 
+## Location of online website
+
+https://wsd-course-project-1-4uaq.onrender.com
 
 
